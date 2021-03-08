@@ -8,7 +8,7 @@ Requires a local database set up as follows:
 
 
 
-Name: Project6
+Database Name: Project6
 
 
 
