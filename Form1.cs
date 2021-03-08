@@ -53,12 +53,11 @@ namespace Project4
             try
 			{
 				command.ExecuteNonQuery();
-				Console.WriteLine("Record inserted...");
 				UpdateGrid();
 			}
 			catch (Exception exception)
 			{
-                Console.WriteLine(exception.Message);
+                MessageBox.Show("Database error: " + exception.Message);
 			}
 			finally
 			{
