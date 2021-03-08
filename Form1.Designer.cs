@@ -42,15 +42,20 @@ namespace Project4
             this.labelTotalPrice = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxOrders = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.addOrder = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxOrders = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelTotalAllOrders = new System.Windows.Forms.Label();
+            this.textBoxAllOrders = new System.Windows.Forms.TextBox();
+            this.totalAllOrders = new System.Windows.Forms.Button();
             this.groupBoxFlavor.SuspendLayout();
             this.groupBoxToppings.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxFlavor
@@ -153,10 +158,10 @@ namespace Project4
             // 
             // buttonTotalPrice
             // 
-            this.buttonTotalPrice.Location = new System.Drawing.Point(8, 18);
+            this.buttonTotalPrice.Location = new System.Drawing.Point(23, 18);
             this.buttonTotalPrice.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTotalPrice.Name = "buttonTotalPrice";
-            this.buttonTotalPrice.Size = new System.Drawing.Size(107, 35);
+            this.buttonTotalPrice.Size = new System.Drawing.Size(183, 35);
             this.buttonTotalPrice.TabIndex = 2;
             this.buttonTotalPrice.Text = "Total Price";
             this.buttonTotalPrice.UseVisualStyleBackColor = true;
@@ -165,6 +170,7 @@ namespace Project4
             // labelTotalPrice
             // 
             this.labelTotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTotalPrice.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelTotalPrice.Location = new System.Drawing.Point(332, 18);
             this.labelTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTotalPrice.Name = "labelTotalPrice";
@@ -196,6 +202,14 @@ namespace Project4
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Ice Cream Cone";
+            // 
+            // textBoxOrders
+            // 
+            this.textBoxOrders.Location = new System.Drawing.Point(296, 28);
+            this.textBoxOrders.Multiline = true;
+            this.textBoxOrders.Name = "textBoxOrders";
+            this.textBoxOrders.Size = new System.Drawing.Size(154, 107);
+            this.textBoxOrders.TabIndex = 9;
             // 
             // button2
             // 
@@ -237,19 +251,54 @@ namespace Project4
             this.label2.TabIndex = 5;
             this.label2.Text = "Total Price";
             // 
-            // textBoxOrders
+            // groupBox3
             // 
-            this.textBoxOrders.Location = new System.Drawing.Point(296, 28);
-            this.textBoxOrders.Multiline = true;
-            this.textBoxOrders.Name = "textBoxOrders";
-            this.textBoxOrders.Size = new System.Drawing.Size(154, 107);
-            this.textBoxOrders.TabIndex = 9;
+            this.groupBox3.Controls.Add(this.labelTotalAllOrders);
+            this.groupBox3.Controls.Add(this.textBoxAllOrders);
+            this.groupBox3.Controls.Add(this.totalAllOrders);
+            this.groupBox3.Location = new System.Drawing.Point(497, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(172, 273);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "All Customer Orders";
+            // 
+            // labelTotalAllOrders
+            // 
+            this.labelTotalAllOrders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTotalAllOrders.Location = new System.Drawing.Point(8, 227);
+            this.labelTotalAllOrders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTotalAllOrders.Name = "labelTotalAllOrders";
+            this.labelTotalAllOrders.Size = new System.Drawing.Size(154, 35);
+            this.labelTotalAllOrders.TabIndex = 10;
+            this.labelTotalAllOrders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelTotalAllOrders.Click += new System.EventHandler(this.labelTotalAllOrders_Click);
+            // 
+            // textBoxAllOrders
+            // 
+            this.textBoxAllOrders.Location = new System.Drawing.Point(8, 19);
+            this.textBoxAllOrders.Multiline = true;
+            this.textBoxAllOrders.Name = "textBoxAllOrders";
+            this.textBoxAllOrders.Size = new System.Drawing.Size(154, 160);
+            this.textBoxAllOrders.TabIndex = 9;
+            this.textBoxAllOrders.TextChanged += new System.EventHandler(this.textBoxAllOrders_TextChanged);
+            // 
+            // totalAllOrders
+            // 
+            this.totalAllOrders.Location = new System.Drawing.Point(8, 185);
+            this.totalAllOrders.Name = "totalAllOrders";
+            this.totalAllOrders.Size = new System.Drawing.Size(154, 39);
+            this.totalAllOrders.TabIndex = 7;
+            this.totalAllOrders.Text = "Total Up All Transactions";
+            this.totalAllOrders.UseVisualStyleBackColor = true;
+            this.totalAllOrders.Click += new System.EventHandler(this.totalAllOrders_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 298);
+            this.ClientSize = new System.Drawing.Size(689, 303);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -266,6 +315,8 @@ namespace Project4
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -294,6 +345,10 @@ namespace Project4
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxOrders;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label labelTotalAllOrders;
+        private System.Windows.Forms.TextBox textBoxAllOrders;
+        private System.Windows.Forms.Button totalAllOrders;
     }
 }
 
